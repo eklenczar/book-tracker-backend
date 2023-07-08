@@ -2,8 +2,8 @@ class BooksController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     
     def index
-        books = Books.all
-        render_json: books, status: :ok
+        books = Book.all
+        render json: books, include: :reviews
     end
     
     # GET /books/:id
@@ -24,11 +24,11 @@ class BooksController < ApplicationController
         render json: book
     end
 
-      def destroy
+    def destroy
         book = find_book
         book.destroy
         head :no_content
-      end
+    end
 
     private
 

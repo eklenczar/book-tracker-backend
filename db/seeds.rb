@@ -30,7 +30,7 @@ users = User.all.map{|u| u.id}
         title: "The Great Gatsby",
         author: "F. Scott Fitzgerald",
         genre: "Tragedy",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/,330px-The_Great_Gatsby_Cover_1925_Retouched.jpg",
+        image: "https://i0.wp.com/americanwritersmuseum.org/wp-content/uploads/2018/02/CK-3.jpg?resize=267%2C400&ssl=1",
         description: "Set in Jazz Age New York, the novel tells the tragic story of Jay Gatsby, a self-made millionaire, and his pursuit of Daisy Buchanan, a wealthy young woman whom he loved in his youth."
         )
 

@@ -1,9 +1,8 @@
 class BooksController < ApplicationController
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     
     def index
         books = Book.all
-        render json: books, include: :reviews
+        render json: books
     end
     
     # GET /books/:id
@@ -13,7 +12,7 @@ class BooksController < ApplicationController
     end
 
     def create
-        book = Book.create(book_params)
+        book = Book.create!(book_params)
         render json: book, status: :created
     end
 
@@ -27,20 +26,16 @@ class BooksController < ApplicationController
     def destroy
         book = find_book
         book.destroy
-        head :no_content
+        render json: {}
     end
 
     private
 
     def book_params
-        params.permit(:title, :author, :genre)
-    end
-
-    def render_not_found_response
-        render json: { error: "Book not found" }, status: :not_found
+        params.permit(:title, :author, :genre, :image, :description)
     end
 
     def find_book
-        Book.find(id: params[:id])
+        Book.find(params[:id])
     end
 end

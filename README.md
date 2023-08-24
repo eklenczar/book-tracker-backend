@@ -1,24 +1,19 @@
-# README
+Getting started with Book Trackr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Frontend Link](https://github.com/eklenczar/book-tracker-frontend)
+[Backend Link](https://github.com/eklenczar/book-tracker-backend)
 
-Things you may want to cover:
+To get started with the frontend: Run npm install in the console. Run npm start in the console.
+To get started on the backend: Run bundle install in the console. Run rails s in the console.
 
-* Ruby version
+BookTrakr is an app that is used to keep track of the books a user reads and allows them to review those books for other users to see.
 
-* System dependencies
+Home Page - A landing page with information about what Book Trackr does. 
 
-* Configuration
+Books Page - This page lists all the books users have entered. Clicking on the cover of the book takes you to a page with the books details and reviews.
 
-* Database creation
+Book Details Page - This page is accessed by clicking on the cover of a book on the Books Page. Here you can see more specific in formation about the selected book as well as reviews entered by the app's users. There is also a "New Review" button which takes you to the New Reviews page where you can input your review for the book. Edit and delete functions are available for specific reviews but can only be used by the author of said review.
 
-* Database initialization
+Sign Up Page - This page allows you to create your own account on the app by entering a username, email, and password.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Login Page - Here you can use you username and password to login and add books as well as manage reviews for your account.

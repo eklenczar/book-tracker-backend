@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    skip_before_action :authenticate_user, only: [:index, :show, :create, :destroy]
     
     def index
         books = Book.all
@@ -14,13 +15,6 @@ class BooksController < ApplicationController
     def create
         book = Book.create!(book_params)
         render json: book, status: :created
-    end
-
-    # PATCH /books/:id
-    def update
-        book = find_book
-        book.update(book_params)
-        render json: book
     end
 
     def destroy

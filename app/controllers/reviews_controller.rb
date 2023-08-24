@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :authorized, only: [:update, :destroy]
 
     def index
         reviews = Review.all
@@ -13,6 +14,18 @@ class ReviewsController < ApplicationController
     def create
         review = Review.create!(review_params)
         render json: review, status: :created
+    end
+
+    def update
+        review = find_review
+        review.update(review_params)
+        render json: review
+    end
+     
+    def destroy
+        review = find_review
+        review.destroy
+        render json: review
     end
 
     private

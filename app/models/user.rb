@@ -5,7 +5,7 @@ class User < ApplicationRecord
     has_many :books, through: :reviews
 
     validates :name, presence: true, uniqueness: true
-    # validates :password, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true
 
    
 end

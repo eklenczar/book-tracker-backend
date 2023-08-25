@@ -16,7 +16,6 @@ class ApplicationController < ActionController::API
     end
 
     def authorized
-        
         @user_id = session[:user_id]
         @review = Review.find(params[:id])
         render json: { errors: ["You are not authorized to edit or delete this review."]}, status: :unauthorized unless @review.user_id == @user_id
